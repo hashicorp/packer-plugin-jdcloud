@@ -3,6 +3,7 @@ description: |
   The `jdcloud` Packer builder helps you to build instance images
   based on an existing image
 page_title: JDCloud Image Builder
+nav_title: JDCloud
 ---
 
 # JDCloud Image Builder
@@ -12,6 +13,23 @@ Artifact BuilderId: `hashicorp.jdcloud`
 
 The `jdcloud` Packer builder helps you to build instance images
 based on an existing image
+
+### Installation Using the `packer init` command
+
+To install this plugin using Packer version 1.7 or later, copy and paste this
+code into your Packer configuration. Then, run
+[`packer init`](https://www.packer.io/docs/commands/init).
+
+```hcl
+packer {
+  required_plugins {
+    jdcloud = {
+      version = ">= 0.0.1"
+      source  = "github.com/hashicorp/jdcloud"
+    }
+  }
+}
+```
 
 ## Configuration Reference
 
@@ -55,6 +73,9 @@ In addition to the above configuration options, a communicator can be configured
 
 Here is a basic example for JDCloud.
 
+<Tabs>
+<Tab heading="JSON">
+
 ```json
 {
   "builders": [
@@ -85,4 +106,36 @@ Here is a basic example for JDCloud.
 }
 ```
 
-[Find more examples](https://github.com/hashicorp/packer/tree/master/builder/jdcloud/examples)
+</Tab>
+<Tab heading="HCL2">
+
+```hcl
+source "jdcloud" "example" {
+  access_key       = "<your access key>"
+  az               = "cn-north-1c"
+  communicator     = "ssh"
+  image_id         = "img-h8ly274zg9"
+  image_name       = "packerImage"
+  instance_name    = "created_by_packer"
+  instance_type    = "g.n2.medium"
+  region_id        = "cn-north-1"
+  secret_key       = "<your secret key>"
+  ssh_keypair_name = "created_by_xiaohan"
+  ssh_password     = "/Users/mac/.ssh/id_rsa"
+  ssh_username     = "root"
+  subnet_id        = "subnet-jo6e38sdli"
+}
+
+build {
+  sources = ["source.jdcloud.example"]
+
+  provisioner "shell" {
+    inline = ["sleep 3", "echo 123", "pwd"]
+  }
+}
+```
+
+</Tab>
+</Tabs>
+
+[Find more examples](https://github.com/hashicorp/packer-plugin-jdcloud/tree/master/example)
