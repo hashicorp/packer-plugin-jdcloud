@@ -35,6 +35,4 @@ func (s *stepStopJDCloudInstance) Run(_ context.Context, state multistep.StateBa
 	return multistep.ActionContinue
 }
 
-func (s *stepStopJDCloudInstance) Cleanup(multistep.StateBag) {
-	return
-}
+func (s *stepStopJDCloudInstance) Cleanup(multistep.StateBag) {}
