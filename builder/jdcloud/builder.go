@@ -27,7 +27,7 @@ func (b *Builder) Prepare(raws ...interface{}) ([]string, []string, error) {
 		},
 	}, raws...)
 	if err != nil {
-		return nil, nil, fmt.Errorf("[ERROR] Failed in decoding JSON->mapstructure")
+		return nil, nil, fmt.Errorf("[ERROR] Failed in decoding JSON->mapstructure: %s", err)
 	}
 
 	errs := &packersdk.MultiError{}
