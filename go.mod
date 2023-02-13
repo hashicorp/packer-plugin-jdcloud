@@ -3,10 +3,10 @@ module github.com/hashicorp/packer-plugin-jdcloud
 go 1.17
 
 require (
-	github.com/hashicorp/hcl/v2 v2.13.0
+	github.com/hashicorp/hcl/v2 v2.16.1
 	github.com/hashicorp/packer-plugin-sdk v0.3.1
 	github.com/jdcloud-api/jdcloud-sdk-go v1.9.1-0.20190605102154-3d81a50ca961
-	github.com/zclconf/go-cty v1.10.0
+	github.com/zclconf/go-cty v1.12.1
 )
 
 require (
