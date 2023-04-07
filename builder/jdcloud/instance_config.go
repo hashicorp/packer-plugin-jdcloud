@@ -21,12 +21,11 @@ type JDCloudInstanceSpecConfig struct {
 }
 
 func (jd *JDCloudInstanceSpecConfig) Prepare(ctx *interpolate.Context) []error {
+	if jd == nil {
+		return []error{fmt.Errorf("[PRE-FLIGHT] Configuration appears to be empty")}
+	}
 
 	errs := jd.Comm.Prepare(ctx)
-
-	if jd == nil {
-		return append(errs, fmt.Errorf("[PRE-FLIGHT] Configuration appears to be empty"))
-	}
 
 	if len(jd.ImageId) == 0 {
 		errs = append(errs, fmt.Errorf("[PRE-FLIGHT] 'image_id' empty"))
