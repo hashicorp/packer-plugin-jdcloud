@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 
 source "jdcloud" "new_subnet" {
   access_key       = "<Your access_key>"
