@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 
 source "jdcloud" "privatekey" {
   access_key           = "<your-access-key>"
