@@ -25,7 +25,7 @@ jobs:
       - name: Unshallow
         run: git fetch --prune --unshallow
       - name: 'Determine Go version'
-        id: get-go-version
+        id: get-go-version 
         run: |
           echo "Found Go $(cat .go-version)"
           echo "go-version=$(cat .go-version)" >> $GITHUB_OUTPUT
