@@ -30,7 +30,7 @@ jobs:
           echo "Found Go $(cat .go-version)"
           echo "go-version=$(cat .go-version)" >> $GITHUB_OUTPUT
       - name: Set up Go
-      - uses: actions/setup-go@v2
+        uses: actions/setup-go@v2
         with:
           go-version: ${{ steps.get-go-version.outputs.go-version }}
       - name: Describe plugin
