@@ -25,5 +25,5 @@ $ packer plugins install github.com/hashicorp/jdcloud
 
 #### Builders
 
-- [builder](/packer/integrations/hashicorp/jdcloud/latest/components/builder/jdcloud.mdx) - The `jdcloud` Packer builder helps you to build instance images
+- [jdcloud](/packer/integrations/hashicorp/jdcloud/latest/components/builder/jdcloud) - The `jdcloud` Packer builder helps you to build instance images
 based on an existing image
