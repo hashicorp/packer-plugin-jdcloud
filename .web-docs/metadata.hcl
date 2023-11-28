@@ -7,6 +7,7 @@ integration {
   name = "JDCloud"
   description = "The JDCloud plugin can be used with HashiCorp Packer to create custom images on JDCloud."
   identifier = "packer/hashicorp/jdcloud"
+  flags = ["archived"]
   component {
     type = "builder"
     name = "JDCloud Image Builder"
